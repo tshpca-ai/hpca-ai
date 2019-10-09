@@ -1,0 +1,98 @@
+\thusetup{
+  %******************************
+  % 注意：
+  %   1. 配置里面不要出现空行
+  %   2. 不需要的配置信息可以删除
+  %******************************
+  %
+  %=====
+  % 秘级
+  %=====
+  secretlevel={秘密},
+  secretyear={10},
+  %
+  %=========
+  % 中文信息
+  %=========
+  ctitle={气候系统模式集合预测的关键技术研究},
+  %v\version
+  cdegree={工学硕士},
+  cdepartment={计算机科学与技术系},
+  cmajor={计算机科学与技术},
+  cauthor={吴利},
+  csupervisor={薛巍副教授},
+  %cassosupervisor={陈文光教授}, % 副指导老师
+  %ccosupervisor={某某某教授}, % 联合指导老师
+  % 日期自动使用当前时间，若需指定按如下方式修改：
+  % cdate={超新星纪元},
+  %
+  % 博士后专有部分
+  catalognumber     = {分类号},  % 可以留空
+  udc               = {UDC},  % 可以留空
+  id                = {编号},  % 可以留空： id={},
+  cfirstdiscipline  = {计算机科学与技术},  % 流动站（一级学科）名称
+  cseconddiscipline = {系统结构},  % 专 业（二级学科）名称
+  postdoctordate    = {2009 年 7 月——2011 年 7 月},  % 工作完成日期
+  postdocstartdate  = {2009 年 7 月 1 日},  % 研究工作起始时间
+  postdocenddate    = {2011 年 7 月 1 日},  % 研究工作期满时间
+  %
+  %=========
+  % 英文信息
+  %=========
+  etitle={Key Technology Research on Ensemble Prediction of Climate System Model},
+  %v\version
+  % 这块比较复杂，需要分情况讨论：
+  % 1. 学术型硕士
+  %    edegree：必须为Master of Arts或Master of Science（注意大小写）
+  %             “哲学、文学、历史学、法学、教育学、艺术学门类，公共管理学科
+  %              填写Master of Arts，其它填写Master of Science”
+  %    emajor：“获得一级学科授权的学科填写一级学科名称，其它填写二级学科名称”
+  % 2. 专业型硕士
+  %    edegree：“填写专业学位英文名称全称”
+  %    emajor：“工程硕士填写工程领域，其它专业学位不填写此项”
+  % 3. 学术型博士
+  %    edegree：Doctor of Philosophy（注意大小写）
+  %    emajor：“获得一级学科授权的学科填写一级学科名称，其它填写二级学科名称”
+  % 4. 专业型博士
+  %    edegree：“填写专业学位英文名称全称”
+  %    emajor：不填写此项
+  edegree={Master of Engineering},
+  emajor={Computer Science and Technology},
+  eauthor={Wu Li},
+  esupervisor={Professor Xue Wei},
+  %eassosupervisor={Chen Wenguang},
+  % 日期自动生成，若需指定按如下方式修改：
+  % edate={December, 2005}
+  %
+  % 关键词用“英文逗号”分割
+  ckeywords={集合预测；不确定性量化；代理模式；机器学习；气候系统模式},
+  ekeywords={ensemble prediction, uncertainty quantification, surrogate model, machine learning,climate system model}
+}
+
+% 定义中英文摘要和关键字
+\begin{cabstract}
+%气候系统模式集合预测是提升预报能力的重要方法。然而由于物理过程参数和初值的不确定性等原因导致气候预测存在严峻的挑战。降低气候集合预测中的物理参数和初值不确定性对提升预测能力至关重要。
+%本文提出了一种基于参数优化的气候系统模式初值集合方法(BGMOPT)。此方法首先对气候系统模式中的不确定性参数进行优化，然后将优化参数后的模式用于初值集合预测。
+
+物理方案参数不确定性量化是减小参数不确定性，提升气候系统模式模拟水平的重要方法，但是当前常用的进化算法等在复杂的气候系统模式上的应用需要极高的时间和计算成本，急需快速高效的参数优化方法。针对此现状，本文提出了一组基于多层感知机神经网络的代理模式参数优化方法，有力支持单目标优化、多目标优化和有约束优化多种模式参数估计场景。本文提出的优化算法与当前常用的优化算法在复杂数学函数和单柱大气模式上的评测结果表明，新提出的算法在精度和收敛性上具有总体优势。在复杂单柱大气模式上，本文的多目标优化方法收敛速度可相对NSGAIII方法提升5倍以上。
+
+初值集合扰动方法对降低初值不确定性，意义重大。然而当前气候预测中常用的滞后平均法（LAF）缺乏较强的理论基础。本文提出了一种面向气候预测的增长模繁殖法（BGM），此方法是在天气预测BGM的基础上结合了气候预测特征对初始繁殖扰动生成，繁殖循环长度选取等关键技术进行了重构，重构后的方法更能适应气候预测中增长最快扰动的获取。为了进一步验证方法的有效性，BGM方法与国家气候中心当前使用的LAF方法在BCC-CSM气候系统模式上进行了15年的对比回报试验，试验结果表明新提出的BGM方法在第一个月的预测结果中相比LAF方法改进明显，500hpa（百帕）位势高度的均方根误差相对于LAF方法预测结果减小了10\%。部分变量的改进效果可延伸至四个月。
+
+融合上述技术，本文设计了一种面向气候预测的集合方法(BGMOPT)并实现了相应的气候预测系统原型，针对国家气候中心的BCC-CSM模式，以热带大气季节内振荡(MJO)和东亚夏季风(EASM)为目标，以辐射平衡为约束对不确定性参数进行优化，将优化后的参数用于BGM初值扰动集合，结果表明BGMOPT方法在2008年12月到2009年3月的气候预测案例中表现良好。四个月全球降水与观测的均方误差相比原LAF方法改进15\%。进一步，本文提出了一种基于机器学习的集合预测集成方法以针对重要的预报指标生成最优的确定性预报结果，此方法结合了观测和模式输出数据的特征，对BCC-CSM模式输出的集合预测结果进行修正与集成，此方法在厄尔尼诺/南方涛动（ENSO）的预测中，海表温度与观测的均方根误差可相对于传统的集合平均法改进32\%.
+
+%另外由于2008年12月为中国几十年难得一见的寒潮现象。本文分析了在中国北方的降水和地表温度等指标，新的方法相比原方法分别改进**倍和**倍。
+%此类优化算法与进化算法中以种群为单位更新优化策略的方法不同，而是每一个最新样本都需要调整优化策略，因此提高了收敛速度。而相对于基于插值模型的传统代理模式，此类方法的代理回归精度更高，从而提升了优化策略的决策能力，提升了算法的准确率。
+\end{cabstract}
+
+% 如果习惯关键字跟在摘要文字后面，可以用直接命令来设置，如下：
+% \ckeywords{\TeX, \LaTeX, CJK, 模板, 论文}
+
+\begin{eabstract}
+Parameter uncertainty quantification approaches are used to reduce parameter uncertainty and improve the simulation skill of climate system model. However, the application of current popular evolutionary algorithms in complex climate system models requires long time and high computational cost. For cost expensive climate system models, fast and effective parameter optimization methods need to be further studied. This paper proposes a set of parameter optimization methods based on multilayer perceptron surrogate model targeting single objective optimization, multi-objective optimization and constrained optimization. The evaluation results of the proposed optimization algorithms and the commonly used optimization algorithms with complex mathematical functions and single-column atmospheric modes show that the proposed algorithms have overall advantages in accuracy and convergence. With the complex single column atmospheric model, the convergence rate of the proposed multi-objective optimization method can be improved by more than 5 times compared with the known NSGAIII method.
+
+The initial condition perturbation method of ensemble is of great significance for the study of reducing the initial uncertainty. However, the currently used Lagged Average Forecasting(LAF) method lacks a strong theoretical foundation. This paper proposes a Breeding of Growing Mode(BGM) method for climate prediction, based on the BGM method for weather prediction. And the key techniques in BGM method, such as initial perturbation generation and breeding cycle length, are reconstructed. The reconstructed method is more adaptable to obtain the fastest growing perturbation in climate prediction. This paper compares the proposed BGM method with the LAF method currently used by the National Climate Center in the BCC-CSM climate system model. 15-years hindicast results show that the BGM method is significantly better than the LAF method in the prediction of most climate variables in the first month. The 500hpa potential height is improved by 10\% relative to the LAF method in term of RMSE(root mean square error). The improvement effect of some variables can be extended to four months.
+
+Finally, this paper designs a new climate ensemble method (BGMOPT) for climate prediction, by integration of the proposed parameter optimization method and the BGM, which is compared with the LAF method in the BCC-CSM model. With BCC-CSM model, the Madden-Julian oscillation(MJO) and the East Asian summer monsoon(EASM) are taken as the objectives, the radiation balance at top of model is used as the constraint. The improved BCC-CSM model with optimized parameters is used for ensemble prediction. The results show that the BGMOPT method performs well in the climate simulation experiments. The four-month global precipitation is about 15\% better than the LAF method under the mean square error. Furthermore, this paper proposes a machine learning-based ensemble result improvement method to generate optimal deterministic forecast results for important forecast indicators. This method combines the characteristics of observation and model output data to correct and integrate the ensemble prediction results of the climate system model. In the prediction of the El Niño/Southern Oscillation (ENSO), this method can improve the sea surface temperature RMSE by 32\% relative to the ensemble average method.
+\end{eabstract}
+
+% \ekeywords{\TeX, \LaTeX, CJK, template, thesis}
